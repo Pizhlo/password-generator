@@ -4,18 +4,17 @@ import string
 
 
 def home(request):
+    """Главная страница сайта"""
     return render(request, 'generator/home.html')
 
 
 def about(request):
+    """Страница о сайте"""
     return render(request, 'generator/about.html')
 
 
-def test(request):
-    return render(request, 'generator/test.html')
-
-
 def password(request):
+    """Функция генерации пароля по заданным параметрам"""
     characters = list(string.ascii_lowercase)
     thepassword = ''
 
