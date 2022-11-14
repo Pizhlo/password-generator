@@ -1,19 +1,21 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 import random
 import string
+from django.core.handlers.wsgi import WSGIRequest
 
 
-def home(request):
+def home(request: WSGIRequest) -> HttpResponse:
     """Главная страница сайта"""
     return render(request, 'generator/home.html')
 
 
-def about(request):
+def about(request: WSGIRequest) -> HttpResponse:
     """Страница о сайте"""
     return render(request, 'generator/about.html')
 
 
-def password(request):
+def password(request: WSGIRequest) -> HttpResponse:
     """Функция генерации пароля по заданным параметрам"""
     characters = list(string.ascii_lowercase)
     thepassword = ''
